@@ -8,6 +8,7 @@ System.out.println("Hiiiiiiiiiiiiii");
 System.out.println("Konnichiwaaaaaa");
 System.out.println("Holaaaaaaaaaaaa");
 System.out.println("Bradens edit");
+System.out.println("I long for deathhhhhhhhhhhhhhhhh");
 
 	}
 
