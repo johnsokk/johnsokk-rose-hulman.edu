@@ -56,7 +56,7 @@ public class Main {
 			myFrame.pack();
 			myFrame.setVisible(true);
 			
-			// Close your tabs!!!!!!!!!!!
+			// Close your tabs!!!!!!!!!!!!!!!
 			
 		}
 
