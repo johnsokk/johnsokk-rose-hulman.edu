@@ -25,20 +25,25 @@ public class Main {
 		frame.add(label, BorderLayout.CENTER);
 		frame.add(panel, BorderLayout.SOUTH); 
 		
-		JButton ticket = new JButton("Add Ticket");
-		label.setText("Select the 'Add Ticket' button below to "
-				+ "add a ticket or card to your "
+		JButton ticket = new JButton("Add Card");
+		
+		label.setText("Select the 'Add Card' button below to "
+				+ "add a card to your "
 				+ "travel hub.");
 		panel.add(ticket);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
+		
+		//JButton myButton = new JButton();
+		//panel.add(myButton);
 	}
 	
 	public class MainListener implements ActionListener{ 
 		public void actionPerformed(ActionEvent e) {
+			
 			String ticketName = JOptionPane.showInputDialog("Enter a name for the ticket/card");
-			String ticketCost = JOptionPane.showInputDialog("What is the current balance on the ticket/card?")
+			String ticketCost = JOptionPane.showInputDialog("What is the current balance on the ticket/card?");
 			int nTickets = Integer.parseInt(ticketCost);
 			
 			
@@ -50,6 +55,8 @@ public class Main {
 			myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			myFrame.pack();
 			myFrame.setVisible(true);
+			
+			// Close your tabs!!!!!!!!!!!
 			
 		}
 
