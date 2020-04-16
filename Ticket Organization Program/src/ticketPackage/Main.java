@@ -38,7 +38,7 @@ public class Main {
 	public class MainListener implements ActionListener{ 
 		public void actionPerformed(ActionEvent e) {
 			String ticketName = JOptionPane.showInputDialog("Enter a name for the ticket/card");
-			String ticketCost = JOptionPane.showInputDialog("What is the current balance on the ticket/card?")
+			String ticketCost = JOptionPane.showInputDialog("What is the current balance on the ticket/card?");
 			int nTickets = Integer.parseInt(ticketCost);
 			
 			
