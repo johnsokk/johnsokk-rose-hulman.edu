@@ -25,7 +25,7 @@ public class AddCardJFrame {
 		JTextField cardBalance = new JTextField("");
 		JTextField cardExpiration = new JTextField("");
 		
-		// Asking user input. Users are asked the questions in the JLabel().
+		// Asking user input. Users are asked the questions in the JLabel(). The questions are in the parenthesese.
 		JLabel nameLabel = new JLabel("Please name your IC card");
 		JLabel balanceLabel = new JLabel("What is your IC card balance?");
 		JLabel expirationLabel = new JLabel("When does your IC card expire?");
