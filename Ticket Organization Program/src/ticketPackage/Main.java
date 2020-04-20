@@ -59,7 +59,29 @@ public class Main {
 	 * 
 	 */ 
 	
-	 }
+
+//	public class MainListener implements ActionListener{ 
+//		public void actionPerformed(ActionEvent e) {
+//			
+//			String ticketName = JOptionPane.showInputDialog("Enter a name for the ticket/card");
+//			String ticketCost = JOptionPane.showInputDialog("What is the current balance on the ticket/card?");
+//			int nTickets = Integer.parseInt(ticketCost);
+//			
+//			
+//			JFrame  myFrame = new JFrame();
+//			JPanel mypanel = new JPanel();
+//			myFrame.setTitle("Add Ticket Information");
+//			myFrame.add(mypanel, BorderLayout.CENTER);
+//			
+//			myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+//			myFrame.pack();
+//			myFrame.setVisible(true);
+			
+			// Close your tabs!!!!!!!!!!!!!!!
+			//Hi
+			//Github is tough
+			
+		}
 
 	private static void AddCardJFrame() {
 		// TODO Auto-generated method stub
