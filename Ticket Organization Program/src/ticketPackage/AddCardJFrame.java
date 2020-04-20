@@ -60,6 +60,7 @@ public class AddCardJFrame {
 		addCardFrame.setVisible(true);
 		
 		
+		
 	}
 	
 
