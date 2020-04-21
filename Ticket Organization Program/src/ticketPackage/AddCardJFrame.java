@@ -28,6 +28,7 @@ public class AddCardJFrame {
 		JPanel topPanel = new JPanel();
 		JPanel middlePanel = new JPanel();
 		JPanel bottomPanel = new JPanel();
+		JPanel addCardButtonPanel = new JPanel();
 		
 		addCardPanel.add(topPanel, BorderLayout.CENTER);
 		addCardPanel.add(middlePanel, BorderLayout.CENTER);
@@ -59,16 +60,16 @@ public class AddCardJFrame {
 		
 		JButton addCardButton = new JButton("Add Card");
 		
-		addCardPanel.add(addCardButton, BorderLayout.EAST);
+		//addCardFrame.add(addCardButton);
+		//addCardPanel.add(addCardButton);
+//		addCardButtonPanel.add(addCardButton, BorderLayout.CENTER);
+//		addCardFrame.add(addCardButtonPanel, BorderLayout.SOUTH);
 	
 		addCardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		addCardFrame.pack();
 		addCardFrame.setVisible(true);
 		
 		
-		
 	}
-	
-
 	
 }
