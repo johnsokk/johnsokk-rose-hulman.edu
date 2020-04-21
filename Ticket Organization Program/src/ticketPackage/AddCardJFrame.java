@@ -19,42 +19,48 @@ public class AddCardJFrame {
 		JPanel addCardPanel = new JPanel();
 		JLabel addCardLabel = new JLabel();
 		
-		// Setting title of the JFrame to "Add Card" 
+		// Creating labels for each question we want to ask the user
+		JLabel nameLabel = new JLabel("Please name your IC card.            ");
+		JLabel balanceLabel = new JLabel("What is your IC card balance?     ");
+		JLabel expirationLabel = new JLabel("When does your IC card expire? ");
+		
+		// 
+		JPanel topPanel = new JPanel();
+		JPanel middlePanel = new JPanel();
+		JPanel bottomPanel = new JPanel();
+		
+		addCardPanel.add(topPanel, BorderLayout.CENTER);
+		addCardPanel.add(middlePanel, BorderLayout.CENTER);
+		addCardPanel.add(bottomPanel, BorderLayout.CENTER);
 		
 		JTextField cardName = new JTextField("");
 		JTextField cardBalance = new JTextField("");
 		JTextField cardExpiration = new JTextField("");
 		
-		JLabel nameLabel = new JLabel("Please name your IC card");
-		JLabel balanceLabel = new JLabel("What is your IC card balance?");
-		JLabel expirationLabel = new JLabel("When does your IC card expire?");
-		
-		JPanel topPanel = new JPanel();
-		
-		addCardPanel.add(topPanel, BorderLayout.NORTH);
-		
-		cardName.setBounds(0, 1000, 1200, 1130);
-		cardBalance.setBounds(0, 1000, 1200, 1130);
-		cardExpiration.setBounds(0, 1000, 1200, 1130);
+		topPanel.add(nameLabel, BorderLayout.NORTH);
+		middlePanel.add(balanceLabel, BorderLayout.NORTH);
+		bottomPanel.add(expirationLabel, BorderLayout.NORTH);
 		
 		topPanel.add(cardName, BorderLayout.NORTH);
-		topPanel.add(cardBalance, BorderLayout.EAST);
-		topPanel.add(cardExpiration, BorderLayout.SOUTH);
+		middlePanel.add(cardBalance, BorderLayout.NORTH);
+		bottomPanel.add(cardExpiration, BorderLayout.NORTH);
 		
-		topPanel.add(nameLabel, BorderLayout.NORTH);
-		topPanel.add(balanceLabel, BorderLayout.EAST);
-		topPanel.add(expirationLabel, BorderLayout.WEST);
+		cardName.setColumns(12);
+		cardBalance.setColumns(12);
+		cardExpiration.setColumns(12);
 		
 		addCardFrame.setTitle("Add Card");
-		addCardFrame.add(addCardLabel, BorderLayout.CENTER);
+		addCardFrame.add(addCardLabel, BorderLayout.NORTH);
 		addCardFrame.add(addCardPanel, BorderLayout.SOUTH); 
+		
+		addCardFrame.add(topPanel, BorderLayout.NORTH);
+		addCardFrame.add(middlePanel, BorderLayout.CENTER);
+		addCardFrame.add(bottomPanel, BorderLayout.SOUTH);
 		
 		JButton addCardButton = new JButton("Add Card");
 		
-		addCardPanel.add(addCardButton);
-		
-		String cardName1 = JOptionPane.showInputDialog(addCardFrame, "Enter a name for the card");
-		
+		addCardPanel.add(addCardButton, BorderLayout.EAST);
+	
 		addCardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		addCardFrame.pack();
 		addCardFrame.setVisible(true);
