@@ -6,7 +6,6 @@ import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
@@ -21,6 +20,7 @@ public class AddCardJFrame {
 		JFrame addCardFrame = new JFrame();
 		JPanel addCardPanel = new JPanel();
 		JLabel addCardLabel = new JLabel();
+		
 		addCardFrame.setLayout(myLayout);  
 
 		// Creating labels for each question we want to ask the user
@@ -55,17 +55,13 @@ public class AddCardJFrame {
 		cardExpiration.setColumns(12);
 		
 		addCardFrame.setTitle("Add Card");
-//		addCardFrame.add(addCardLabel);
-//		addCardFrame.add(addCardPanel); 
 		
 		addCardFrame.add(topPanel);
 		addCardFrame.add(middlePanel);
 		addCardFrame.add(bottomPanel);
 		
-		
 		JButton addCardButton = new JButton("Add Card");
 		
-		//addCardFrame.add(addCardButton);
 		addCardPanel.add(addCardButton);
 		addCardButtonPanel.add(addCardButton, BorderLayout.CENTER);
 		addCardFrame.add(addCardButtonPanel);
