@@ -1,6 +1,7 @@
 package ticketPackage;
 
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -14,11 +15,14 @@ public class AddCardJFrame {
 		public AddCardJFrame() {
 		
 		// Creating a JFrame, JPanel and JLabel. This is for adding the card 
-			
+			GridLayout myLayout = new GridLayout(4,1);  
+
+
 		JFrame addCardFrame = new JFrame();
 		JPanel addCardPanel = new JPanel();
 		JLabel addCardLabel = new JLabel();
-		
+		addCardFrame.setLayout(myLayout);  
+
 		// Creating labels for each question we want to ask the user
 		JLabel nameLabel = new JLabel("Please name your IC card.            ");
 		JLabel balanceLabel = new JLabel("What is your IC card balance?     ");
@@ -51,19 +55,20 @@ public class AddCardJFrame {
 		cardExpiration.setColumns(12);
 		
 		addCardFrame.setTitle("Add Card");
-		addCardFrame.add(addCardLabel, BorderLayout.NORTH);
-		addCardFrame.add(addCardPanel, BorderLayout.SOUTH); 
+//		addCardFrame.add(addCardLabel);
+//		addCardFrame.add(addCardPanel); 
 		
-		addCardFrame.add(topPanel, BorderLayout.NORTH);
-		addCardFrame.add(middlePanel, BorderLayout.CENTER);
-		addCardFrame.add(bottomPanel, BorderLayout.SOUTH);
+		addCardFrame.add(topPanel);
+		addCardFrame.add(middlePanel);
+		addCardFrame.add(bottomPanel);
+		
 		
 		JButton addCardButton = new JButton("Add Card");
 		
 		//addCardFrame.add(addCardButton);
-		//addCardPanel.add(addCardButton);
-//		addCardButtonPanel.add(addCardButton, BorderLayout.CENTER);
-//		addCardFrame.add(addCardButtonPanel, BorderLayout.SOUTH);
+		addCardPanel.add(addCardButton);
+		addCardButtonPanel.add(addCardButton, BorderLayout.CENTER);
+		addCardFrame.add(addCardButtonPanel);
 	
 		addCardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		addCardFrame.pack();
