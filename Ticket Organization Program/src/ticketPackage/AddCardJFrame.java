@@ -2,6 +2,7 @@ package ticketPackage;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -65,7 +66,12 @@ public class AddCardJFrame {
 		addCardPanel.add(addCardButton);
 		addCardButtonPanel.add(addCardButton, BorderLayout.CENTER);
 		addCardFrame.add(addCardButtonPanel);
-	
+		
+		//addCardButton.addActionListener(new ActionListener(); {
+			
+		//})
+		
+
 		addCardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
 		addCardFrame.pack();
 		addCardFrame.setVisible(true);
