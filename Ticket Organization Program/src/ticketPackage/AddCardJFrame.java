@@ -10,10 +10,12 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class AddCardJFrame {
+public class AddCardJFrame extends JFrame {
 	
+		private JFrame homePageJFrame;
+
 		public AddCardJFrame() {
-		
+		//	this.homePageJFrame = homePageJFrame;
 		// Creating a JFrame, JPanel and JLabel. This is for adding the card 
 			GridLayout myLayout = new GridLayout(4,1);  
 
@@ -67,12 +69,11 @@ public class AddCardJFrame {
 		addCardButtonPanel.add(addCardButton, BorderLayout.CENTER);
 		addCardFrame.add(addCardButtonPanel);
 		
-		//addCardButton.addActionListener(new ActionListener(); {
+		addCardButton.addActionListener(new AddCardButtonListener(this)); {
 			
-		//})
-		
+		}
 
-		addCardFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
 		addCardFrame.pack();
 		addCardFrame.setVisible(true);
 		
