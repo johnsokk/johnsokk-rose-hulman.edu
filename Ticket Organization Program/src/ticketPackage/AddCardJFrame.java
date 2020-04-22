@@ -77,7 +77,6 @@ public class AddCardJFrame extends JFrame {
 		addCardFrame.pack();
 		addCardFrame.setVisible(true);
 		
-		
 	}
 	
 }
