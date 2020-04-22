@@ -22,6 +22,7 @@ public class Main {
 		homePage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		homePage.pack();
 		homePage.setVisible(true);
+		
 	}
 	
 //	public class MainListener implements ActionListener{ 
@@ -44,11 +45,8 @@ public class Main {
 //		}
 
 	private void AddCardJFrame() {
-		// TODO Auto-generated method stub
-		
+		// TODO Auto-generated method stub	
 	}
-	 
-	
 }
 
 

@@ -12,19 +12,16 @@ import javax.swing.JTextField;
 
 public class AddCardJFrame extends JFrame {
 	
-		private JFrame homePageJFrame;
-
 		public AddCardJFrame() {
 		//	this.homePageJFrame = homePageJFrame;
 		// Creating a JFrame, JPanel and JLabel. This is for adding the card 
 			GridLayout myLayout = new GridLayout(4,1);  
 
 
-		JFrame addCardFrame = new JFrame();
 		JPanel addCardPanel = new JPanel();
 		JLabel addCardLabel = new JLabel();
 		
-		addCardFrame.setLayout(myLayout);  
+		this.setLayout(myLayout);  
 
 		// Creating labels for each question we want to ask the user
 		JLabel nameLabel = new JLabel("Please name your IC card.            ");
@@ -57,26 +54,21 @@ public class AddCardJFrame extends JFrame {
 		cardBalance.setColumns(12);
 		cardExpiration.setColumns(12);
 		
-		addCardFrame.setTitle("Add Card");
+		this.setTitle("Add Card");
 		
-		addCardFrame.add(topPanel);
-		addCardFrame.add(middlePanel);
-		addCardFrame.add(bottomPanel);
+		this.add(topPanel);
+		this.add(middlePanel);
+		this.add(bottomPanel);
 		
 		JButton addCardButton = new JButton("Add Card");
-		
+		addCardButton.addActionListener(new AddCardButtonListener(this)); 
 		addCardPanel.add(addCardButton);
 		addCardButtonPanel.add(addCardButton, BorderLayout.CENTER);
-		addCardFrame.add(addCardButtonPanel);
+		this.add(addCardButtonPanel);
 		
-		addCardButton.addActionListener(new AddCardButtonListener(this)); {
-			
-		}
-
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
-		addCardFrame.pack();
-		addCardFrame.setVisible(true);
+		this.pack();
+		this.setVisible(true);
 		
 	}
-	
-}
+		}
