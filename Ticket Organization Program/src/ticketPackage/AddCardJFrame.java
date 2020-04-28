@@ -42,6 +42,7 @@ public class AddCardJFrame extends JFrame {
 		JTextField cardBalance = new JTextField("");
 		JTextField cardExpiration = new JTextField("");
 		
+		
 		topPanel.add(nameLabel, BorderLayout.NORTH);
 		middlePanel.add(balanceLabel, BorderLayout.NORTH);
 		bottomPanel.add(expirationLabel, BorderLayout.NORTH);
@@ -65,6 +66,8 @@ public class AddCardJFrame extends JFrame {
 		addCardPanel.add(addCardButton);
 		addCardButtonPanel.add(addCardButton, BorderLayout.CENTER);
 		this.add(addCardButtonPanel);
+		
+		System.out.print(cardName);
 		
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
 		this.pack();
