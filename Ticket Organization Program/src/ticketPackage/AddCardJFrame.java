@@ -14,12 +14,12 @@ public class AddCardJFrame extends JFrame {
 	
 		public AddCardJFrame() {
 		//	this.homePageJFrame = homePageJFrame;
-		// Creating a JFrame, JPanel and JLabel. This is for adding the card 
-			GridLayout myLayout = new GridLayout(4,1);  
+		// Creating a grid 
+		GridLayout myLayout = new GridLayout(4,1);  
 
-
+		// Creating a JPanel and JLabel. This is for adding the card 
 		JPanel addCardPanel = new JPanel();
-		JLabel addCardLabel = new JLabel();
+		//JLabel addCardLabel = new JLabel();
 		
 		this.setLayout(myLayout);  
 
@@ -28,7 +28,7 @@ public class AddCardJFrame extends JFrame {
 		JLabel balanceLabel = new JLabel("What is your IC card balance?     ");
 		JLabel expirationLabel = new JLabel("When does your IC card expire? ");
 		
-		// 
+		// Creating four different panels t
 		JPanel topPanel = new JPanel();
 		JPanel middlePanel = new JPanel();
 		JPanel bottomPanel = new JPanel();
