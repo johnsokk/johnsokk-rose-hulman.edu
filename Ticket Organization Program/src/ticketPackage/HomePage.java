@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public class HomePage {
 	private HashMap<String, Integer> cardMap;
-
+// Git makes me sad
 	public HomePage() {
 
 		cardMap = new HashMap<String, Integer>();
