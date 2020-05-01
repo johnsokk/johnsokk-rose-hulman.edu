@@ -8,7 +8,7 @@ import javax.swing.JPanel;
 
 public class HomePage {
 	private HashMap<String, Integer> cardMap;
-// Git makes me sad
+
 	public HomePage() {
 
 		cardMap = new HashMap<String, Integer>();
@@ -50,6 +50,7 @@ public class HomePage {
 	public void displayCard() {
 		for (String key : cardMap.keySet()) {
 			System.out.println(key);
+			System.out.println(cardMap.get(key));
 			//System.out.println(cardMap.);
 		}
 	}
