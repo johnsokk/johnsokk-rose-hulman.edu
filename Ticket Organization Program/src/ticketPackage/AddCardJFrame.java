@@ -34,7 +34,7 @@ public class AddCardJFrame extends JFrame {
 
 		// Creating labels for each question we want to ask the user
 		JLabel nameLabel = new JLabel("Please name your IC card.            ");
-		JLabel balanceLabel = new JLabel("What is your IC card balance?    ¥");
+		JLabel balanceLabel = new JLabel("What is your IC card balance?     ");
 		JLabel expirationLabel = new JLabel("When does your IC card expire? ");
 
 		// Creating four different panels t
@@ -50,13 +50,6 @@ public class AddCardJFrame extends JFrame {
 		cardName = new JTextField("");
 		cardBalance = new JTextField("");
 		cardExpiration = new JTextField("YYYY/MM/DD");
-
-
-		
-		JTextField cardName = new JTextField("");
-		JTextField cardBalance = new JTextField("");
-		JTextField cardExpiration = new JTextField("");
-		
 
 		topPanel.add(nameLabel, BorderLayout.NORTH);
 		middlePanel.add(balanceLabel, BorderLayout.NORTH);
@@ -82,11 +75,7 @@ public class AddCardJFrame extends JFrame {
 		addCardButtonPanel.add(addCardButton, BorderLayout.CENTER);
 		this.add(addCardButtonPanel);
 
-
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-
-		
-		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); 
 		this.pack();
 		this.setVisible(true);
 
