@@ -21,15 +21,18 @@ public class AddCardJFrame extends JFrame {
 
 	public AddCardJFrame(HashMap cardMap, HomePage homepage) {
 		// this.homePageJFrame = homePageJFrame;
-		// Creating a grid
+		
 		this.homepage = homepage;
 		this.cardMap = cardMap;
+		
+		// Creating a grid. We need a grid because if we only use a JPanel, it only allows for three sections,
+		// as we learned while we were coding. 
 		GridLayout myLayout = new GridLayout(4, 1);
 
 		// Creating a JPanel and JLabel. This is for adding the card
 		JPanel addCardPanel = new JPanel();
-		// JLabel addCardLabel = new JLabel();
-
+		
+		// Allows for our window to open
 		this.setLayout(myLayout);
 
 		// Creating labels for each question we want to ask the user
@@ -37,34 +40,36 @@ public class AddCardJFrame extends JFrame {
 		JLabel balanceLabel = new JLabel("What is your IC card balance?     ");
 		JLabel expirationLabel = new JLabel("When does your IC card expire? ");
 
-		// Creating four different panels t
+		// Creating four different panels for each of the JLabels to go on, as well as the "Add Card" button.
 		JPanel topPanel = new JPanel();
 		JPanel middlePanel = new JPanel();
 		JPanel bottomPanel = new JPanel();
 		JPanel addCardButtonPanel = new JPanel();
 
-		addCardPanel.add(topPanel, BorderLayout.CENTER);
-		addCardPanel.add(middlePanel, BorderLayout.CENTER);
-		addCardPanel.add(bottomPanel, BorderLayout.CENTER);
-
+		// Creating three JTextfields for the users to enter information
 		cardName = new JTextField("");
 		cardBalance = new JTextField("");
 		cardExpiration = new JTextField("YYYY/MM/DD");
 
+		// Adds the JLabels to the window
 		topPanel.add(nameLabel, BorderLayout.NORTH);
 		middlePanel.add(balanceLabel, BorderLayout.NORTH);
 		bottomPanel.add(expirationLabel, BorderLayout.NORTH);
-
+		
+		// Adds the the JTextfields to the window
 		topPanel.add(cardName, BorderLayout.NORTH);
 		middlePanel.add(cardBalance, BorderLayout.NORTH);
 		bottomPanel.add(cardExpiration, BorderLayout.NORTH);
 
+		// This makes the three text boxes for each of the JTextFields
 		cardName.setColumns(12);
 		cardBalance.setColumns(12);
 		cardExpiration.setColumns(12);
 
+		// Creating the title for this window
 		this.setTitle("Add Card");
 
+		// Adds the three panels onto the window
 		this.add(topPanel);
 		this.add(middlePanel);
 		this.add(bottomPanel);
