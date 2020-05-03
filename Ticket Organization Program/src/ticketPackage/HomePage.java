@@ -1,5 +1,6 @@
 package ticketPackage;
 
+import java.awt.BorderLayout;
 import java.util.HashMap;
 
 import javax.swing.JButton;
@@ -8,19 +9,21 @@ import javax.swing.JPanel;
 
 public class HomePage {
 	private HashMap<String, Integer> cardMap;
+	private JFrame homePage;
 
 	public HomePage() {
 
 		cardMap = new HashMap<String, Integer>();
-		JFrame homePage = new JFrame();
+		homePage = new JFrame();
 		AddCardJFrame AddCardJFrameClass = new AddCardJFrame(cardMap, this);
 		JButton addCardButton = new JButton("Add Card Icon");
 		JPanel addCardPanel = new JPanel();
 		addCardPanel.add(addCardButton);
 		homePage.add(addCardPanel);
 		homePage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		homePage.pack();
 		homePage.setVisible(true);
+		homePage.pack();
+		
 
 	}
 
@@ -43,15 +46,22 @@ public class HomePage {
 //		
 //	}
 
-	private void AddCardJFrame() {
+	//private void AddCardJFrame() {
 		// TODO Auto-generated method stub
-	}
+	//}
 
 	public void displayCard() {
 		for (String key : cardMap.keySet()) {
 			System.out.println(key);
 			System.out.println(cardMap.get(key));
+			JButton tileCardButton = new JButton(key);
+			JPanel newPanel= new JPanel();
+			homePage.add(newPanel, BorderLayout.SOUTH);
+			newPanel.add(tileCardButton, BorderLayout.CENTER);
+		
 			//System.out.println(cardMap.);
 		}
+		homePage.setVisible(true);
+		homePage.pack();
 	}
 }
