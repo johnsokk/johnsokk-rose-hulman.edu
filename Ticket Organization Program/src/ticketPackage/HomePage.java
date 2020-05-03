@@ -1,6 +1,8 @@
 package ticketPackage;
 
 import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 import javax.swing.JButton;
@@ -23,10 +25,16 @@ public class HomePage {
 		homePage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		homePage.setVisible(true);
 		homePage.pack();
-		
 
 	}
 
+	class AddCardListener implements ActionListener {
+		private HashMap cardMap;
+		private HomePage homePage;
+		public void actionPerformed(ActionEvent e) {
+			//AddCardJFrame AddCardJFrameClass = new AddCardJFrame(cardMap, this.homePage);
+		}
+	}
 //public class MainListener implements ActionListener{ 
 //	public void actionPerformed(ActionEvent e) {
 //		
@@ -46,22 +54,23 @@ public class HomePage {
 //		
 //	}
 
-	//private void AddCardJFrame() {
-		// TODO Auto-generated method stub
-	//}
+	// private void AddCardJFrame() {
+	// TODO Auto-generated method stub
+	// }
 
 	public void displayCard() {
 		for (String key : cardMap.keySet()) {
 			System.out.println(key);
 			System.out.println(cardMap.get(key));
-			JButton tileCardButton = new JButton(key);
-			JPanel newPanel= new JPanel();
+			JButton tileCardButton = new JButton("<html>" + key + "<br/>" + "¥" + cardMap.get(key) + "</html>");
+			JPanel newPanel = new JPanel();
 			homePage.add(newPanel, BorderLayout.SOUTH);
 			newPanel.add(tileCardButton, BorderLayout.CENTER);
-		
-			//System.out.println(cardMap.);
+
+			// System.out.println(cardMap.);
 		}
 		homePage.setVisible(true);
 		homePage.pack();
 	}
+
 }
