@@ -34,6 +34,7 @@ public class AddCardButtonListener implements ActionListener {
 		// addCardJFrame.dispose();
 		addCardJFrame.setVisible(false);
 		addCardJFrame.dispose();
+		
 		// This closes the Add Card Window when the button is pressed.
 
 		// need a hashmap with key being name of each card, card being card object, have
@@ -43,5 +44,9 @@ public class AddCardButtonListener implements ActionListener {
 		// have a card object that holds balance, name, expiration date, date added,
 		// etc. Make them fields in card object
 		// when you hit button to create a new card,
+		
+		//Create a card class w/ name, expiration date, and balance
+		//In this class, do checks for correct data input type
+		//Call this check from here
 	}
 }
