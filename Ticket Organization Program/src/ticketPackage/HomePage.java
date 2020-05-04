@@ -51,6 +51,7 @@ public class HomePage {
 		for (String key : cardMap.keySet()) {
 			System.out.println(key);
 			System.out.println(cardMap.get(key));
+			
 			//System.out.println(cardMap.);
 		}
 	}

@@ -34,7 +34,7 @@ public class AddCardJFrame extends JFrame {
 
 		// Creating labels for each question we want to ask the user
 		JLabel nameLabel = new JLabel("Please name your IC card.            ");
-		JLabel balanceLabel = new JLabel("What is your IC card balance?     ");
+		JLabel balanceLabel = new JLabel("What is your IC card balance?    ");
 		JLabel expirationLabel = new JLabel("When does your IC card expire? ");
 
 		// Creating four different panels t
