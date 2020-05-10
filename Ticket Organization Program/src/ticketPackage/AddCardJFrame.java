@@ -19,34 +19,35 @@ public class AddCardJFrame extends JFrame {
 	private JTextField cardExpiration;
 	private HomePage homepage;
 	private String expDate;
-	private String str; 
+	private String str;
 	private Integer hcbalance;
 
 	public AddCardJFrame(HashMap cardMap, HomePage homepage) {
 		// this.homePageJFrame = homePageJFrame;
-		
+
 		this.homepage = homepage;
 		this.cardMap = cardMap;
-		
-		// Creating a grid. We need a grid because if we only use a JPanel, it only allows for three sections,
-		// as we learned while we were coding. 
+
+		// Creating a grid. We need a grid because if we only use a JPanel, it only
+		// allows for three sections,
+		// as we learned while we were coding.
 		GridLayout myLayout = new GridLayout(4, 1);
 
 		// Creating a JPanel and JLabel. This is for adding the card
 		JPanel addCardPanel = new JPanel();
-		
+
 		// Allows for our window to open
 		this.setLayout(myLayout);
 
 		// Creating labels for each question we want to ask the user
 		JLabel nameLabel = new JLabel("Please name your IC card.            ");
 
-
 		JLabel balanceLabel = new JLabel("What is your IC card balance?   ¥");
 
 		JLabel expirationLabel = new JLabel("When does your IC card expire? ");
 
-		// Creating four different panels for each of the JLabels to go on, as well as the "Add Card" button.
+		// Creating four different panels for each of the JLabels to go on, as well as
+		// the "Add Card" button.
 		JPanel topPanel = new JPanel();
 		JPanel middlePanel = new JPanel();
 		JPanel bottomPanel = new JPanel();
@@ -61,7 +62,7 @@ public class AddCardJFrame extends JFrame {
 		topPanel.add(nameLabel, BorderLayout.NORTH);
 		middlePanel.add(balanceLabel, BorderLayout.NORTH);
 		bottomPanel.add(expirationLabel, BorderLayout.NORTH);
-		
+
 		// Adds the the JTextfields to the window
 		topPanel.add(cardName, BorderLayout.NORTH);
 		middlePanel.add(cardBalance, BorderLayout.NORTH);
@@ -99,23 +100,23 @@ public class AddCardJFrame extends JFrame {
 		String expDate = cardExpiration.getText();
 		System.out.println(expDate);
 		JButton addCardButton = new JButton(str);
-		//addCardButton.addActionListener(new CardButtonListener(this));
-		addCardButton.addActionListener(new CardButtonListener(this));
+		// addCardButton.addActionListener(new CardButtonListener(this));
+		addCardButton.addActionListener(new CardButtonListener());
 		cardMap.put(str, hcbalance);
 		homepage.displayCard();
-	
 
 	}
+
 	public void addTransaction() {
-		this.hcbalance = hcbalance; 
+		this.hcbalance = hcbalance;
 		this.str = str;
 		this.expDate = expDate;
 		GridLayout transactionlayout = new GridLayout();
-		JPanel transactionPanel = new JPanel(); 
+		JPanel transactionPanel = new JPanel();
 		this.setLayout(transactionlayout);
 
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.pack();
 		this.setVisible(true);
-}
+	}
 }
