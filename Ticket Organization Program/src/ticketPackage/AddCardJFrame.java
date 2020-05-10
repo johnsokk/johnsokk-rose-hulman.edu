@@ -18,6 +18,9 @@ public class AddCardJFrame extends JFrame {
 	private JTextField cardBalance;
 	private JTextField cardExpiration;
 	private HomePage homepage;
+	private String expDate;
+	private String str; 
+	private Integer hcbalance;
 
 	public AddCardJFrame(HashMap cardMap, HomePage homepage) {
 		// this.homePageJFrame = homePageJFrame;
@@ -93,10 +96,26 @@ public class AddCardJFrame extends JFrame {
 		String str = cardName.getText();
 		String homecardbalance = cardBalance.getText();
 		int hcbalance = Integer.parseInt(homecardbalance);
+		String expDate = cardExpiration.getText();
+		System.out.println(expDate);
 		JButton addCardButton = new JButton(str);
+		//addCardButton.addActionListener(new CardButtonListener(this));
+		addCardButton.addActionListener(new CardButtonListener(this));
 		cardMap.put(str, hcbalance);
 		homepage.displayCard();
+	
 
 	}
+	public void addTransaction() {
+		this.hcbalance = hcbalance; 
+		this.str = str;
+		this.expDate = expDate;
+		GridLayout transactionlayout = new GridLayout();
+		JPanel transactionPanel = new JPanel(); 
+		this.setLayout(transactionlayout);
 
+		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		this.pack();
+		this.setVisible(true);
+}
 }

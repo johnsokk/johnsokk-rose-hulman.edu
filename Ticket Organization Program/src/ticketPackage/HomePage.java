@@ -11,6 +11,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 public class HomePage {
 	private HashMap<String, Integer> cardMap;
@@ -23,12 +24,14 @@ public class HomePage {
 		cardMap = new HashMap<String, Integer>();
 		homePage = new JFrame();
 		//AddCardJFrame AddCardJFrameClass = new AddCardJFrame(cardMap, this);
-		GridLayout homePageLayout = new GridLayout(4, 1);
+		GridLayout homePageLayout = new GridLayout(3, 1);
 		homePage.setLayout(homePageLayout);
 		JButton addCardButton = new JButton("Add Card Icon");
 		addCardButton.addActionListener(new AddCardListener(this.cardMap, this));
 		JLabel welcomeLabel = new JLabel();
-		welcomeLabel.setText("   Welcome! Select the 'Add Card Icon' button below to add a card to your card library.   ");
+		welcomeLabel.setText("<html>" + "Welcome! Select the 'Add Card Icon' button" + "<br/>" + "below to add a card to your card library." + "</html>");
+		welcomeLabel.setBorder(new EmptyBorder(0, 20, 0, 20));
+		homePage.add(welcomeLabel, BorderLayout.CENTER);
 		homePage.add(welcomeLabel);
 		
 		JPanel addCardPanel = new JPanel();
@@ -84,8 +87,8 @@ public class HomePage {
 		cardPanel.setLayout(cardLayout);
 		for (String key : cardMap.keySet()) {
 
-			System.out.println(key);
-			System.out.println(cardMap.get(key));
+			//System.out.println(key);
+			//System.out.println(cardMap.get(key));
 			
 			//System.out.println(cardMap.);
 
