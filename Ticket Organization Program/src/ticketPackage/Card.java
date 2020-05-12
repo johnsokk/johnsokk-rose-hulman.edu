@@ -5,9 +5,9 @@ import java.awt.GridLayout;
 import javax.swing.JTextField;
 
 public class Card {
-	public String str; 
-	public int hcbalance; 
-	public String expDate; 
+	private String str; 
+	private int hcbalance; 
+	private String expDate; 
 	
 	public Card(String str, Integer hcbalance, String expDate) {
 		this.str = str;
@@ -15,14 +15,15 @@ public class Card {
 		this.expDate = expDate; 
 		
 		
-		
-		//String cardString = cardName.getText();
-		//String homecardbalance = cardBalance.getText();
-		//int cardMoney = Integer.parseInt(homecardbalance);
-		//String expDate = cardExpiration.getText();
-		//System.out.println(cardString);
-		//System.out.println(cardMoney);
-		//System.out.println("Hiiii");
-		//GridLayout transactionLayout = new GridLayout(4, 1);
+	}
+		public String getstr() {
+			return str;
+		}
+		public int gethcbalance() {
+			return hcbalance;
+		}
+		public String expDate() {
+			return expDate;
+		}
 }
-}
+

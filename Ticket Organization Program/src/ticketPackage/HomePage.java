@@ -6,7 +6,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -62,7 +61,7 @@ public class HomePage {
 	// TODO Auto-generated method stub
 	// }
 
-	public void displayCard() {
+	public void displayCard(String currentCardName) {
 		cardPanel.removeAll();
 		GridLayout cardLayout = new GridLayout(cardMap.size(), 1);
 		cardPanel.setLayout(cardLayout);
@@ -74,7 +73,7 @@ public class HomePage {
 			//System.out.println(cardMap.);
 
 			JButton tileCardButton = new JButton("<html>" + key + "<br/>" + "¥" + cardMap.get(key) + "</html>");
-			tileCardButton.addActionListener(new CardButtonListener());
+			tileCardButton.addActionListener(new CardButtonListener(cardMap, currentCardName, this));
 			cardPanel.add(tileCardButton);
 			//newPanel.add(tileCardButton);
 			//homePage.add(newPanel);

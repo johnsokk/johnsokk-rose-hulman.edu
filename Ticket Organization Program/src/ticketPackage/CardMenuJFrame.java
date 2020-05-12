@@ -9,8 +9,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class CardMenuJFrame extends JFrame {
-
-	public CardMenuJFrame() {
+	private HashMap cardMap;
+	private String currentCardName;
+	private HomePage homepage;
+	
+	public CardMenuJFrame(HashMap cardMap, String currentCardName, HomePage homepage) {
+		this.cardMap = cardMap;
+		this.currentCardName = currentCardName;
+		this.homepage = homepage;
 		
 		GridLayout cardMenuLayout = new GridLayout(4, 1);
 		
@@ -25,7 +31,7 @@ public class CardMenuJFrame extends JFrame {
 		this.setLayout(cardMenuLayout);
 		
 		JButton addChargeButton = new JButton("Add Charge");
-		addChargeButton.addActionListener(new AddChargeListener(this));
+		addChargeButton.addActionListener(new AddChargeListener(this, cardMap, currentCardName, homepage));
 		addChargePanel.add(addChargeButton);
 		this.add(addChargePanel);
 		
@@ -43,9 +49,7 @@ public class CardMenuJFrame extends JFrame {
 		//addCardButton.addActionListener(new removeCardButtonListener(this));
 		removeCardPanel.add(removeCardButton);
 		this.add(removeCardPanel);
-		
-		
-		
+				
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.pack();
 		this.setVisible(true);

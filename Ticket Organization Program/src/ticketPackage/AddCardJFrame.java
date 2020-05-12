@@ -101,10 +101,9 @@ public class AddCardJFrame extends JFrame {
 		System.out.println(expDate);
 		JButton addCardButton = new JButton(str);
 		// addCardButton.addActionListener(new CardButtonListener(this));
-		addCardButton.addActionListener(new CardButtonListener());
+		addCardButton.addActionListener(new CardButtonListener(cardMap, str, homepage));
 		cardMap.put(str, hcbalance);
-		homepage.displayCard();
-
+		homepage.displayCard(str);
 	}
 
 	public void addTransaction() {
