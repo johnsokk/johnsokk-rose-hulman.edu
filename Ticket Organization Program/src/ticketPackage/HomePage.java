@@ -13,14 +13,14 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
 public class HomePage {
-	private HashMap<String, Integer> cardMap;
+	private HashMap<String, Card> cardMap;
 	private JFrame homePage;
 	private JPanel cardPanel;
 
 	public HomePage() {
 		
 		cardPanel = new JPanel();
-		cardMap = new HashMap<String, Integer>();
+		cardMap = new HashMap<String, Card>();
 		homePage = new JFrame();
 		//AddCardJFrame AddCardJFrameClass = new AddCardJFrame(cardMap, this);
 		GridLayout homePageLayout = new GridLayout(3, 1);
@@ -44,7 +44,7 @@ public class HomePage {
 	}
 
 	class AddCardListener implements ActionListener {
-		private HashMap<String, Integer> cardMap;
+		private HashMap<String, Card> cardMap;
 		private HomePage homePage;
 
 		public AddCardListener(HashMap cardMap, HomePage homePage) {
@@ -72,7 +72,7 @@ public class HomePage {
 			
 			//System.out.println(cardMap.);
 
-			JButton tileCardButton = new JButton("<html>" + key + "<br/>" + "¥" + cardMap.get(key) + "</html>");
+			JButton tileCardButton = new JButton("<html>" + key + "<br/>" + "¥" + cardMap.get(key).gethcbalance() + "</html>");
 			tileCardButton.addActionListener(new CardButtonListener(cardMap, key, this));
 			cardPanel.add(tileCardButton);
 			

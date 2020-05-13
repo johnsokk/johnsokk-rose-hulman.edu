@@ -102,7 +102,8 @@ public class AddCardJFrame extends JFrame {
 		JButton addCardButton = new JButton(str);
 		// addCardButton.addActionListener(new CardButtonListener(this));
 		addCardButton.addActionListener(new CardButtonListener(cardMap, str, homepage));
-		cardMap.put(str, hcbalance);
+		Card newCard = new Card(str, hcbalance, expDate);
+		cardMap.put(str, newCard);
 		homepage.displayAllCards();
 	}
 
