@@ -36,17 +36,17 @@ public class CardMenuJFrame extends JFrame {
 		this.add(addChargePanel);
 		
 		JButton subtractChargeButton = new JButton("Subtract Charge");
-		//subtractChargeButton.addActionListener(new subtractChargeListener(this));
+		subtractChargeButton.addActionListener(new SubtractChargeListener(this, cardMap, currentCardName, homepage));
 		subtractChargePanel.add(subtractChargeButton);
 		this.add(subtractChargePanel);
 		
 		JButton transactionHistoryButton = new JButton("View Transaction History");
-		//transactionHistoryPanel.addActionListener(new TransactionHistoryListener(this));
+		transactionHistoryButton.addActionListener(new TransactionHistoryListener(this, cardMap, currentCardName, homepage));
 		transactionHistoryPanel.add(transactionHistoryButton);
 		this.add(transactionHistoryPanel);
 		
 		JButton removeCardButton = new JButton("Remove Card");
-		//addCardButton.addActionListener(new removeCardButtonListener(this));
+		removeCardButton.addActionListener(new RemoveCardListener(this,cardMap, currentCardName, homepage));
 		removeCardPanel.add(removeCardButton);
 		this.add(removeCardPanel);
 				

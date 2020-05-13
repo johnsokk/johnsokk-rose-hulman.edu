@@ -22,6 +22,7 @@ public class CardButtonListener implements ActionListener {
 		//addCardJFrame.setVisible(true);
 		//addCardJFrame.dispose();
 		new CardMenuJFrame(cardMap, currentCardName, homepage);
-		System.out.println("Hi");
+		System.out.println("Hi " + currentCardName);
+	
 	}
 }

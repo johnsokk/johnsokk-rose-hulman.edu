@@ -103,7 +103,7 @@ public class AddCardJFrame extends JFrame {
 		// addCardButton.addActionListener(new CardButtonListener(this));
 		addCardButton.addActionListener(new CardButtonListener(cardMap, str, homepage));
 		cardMap.put(str, hcbalance);
-		homepage.displayCard(str);
+		homepage.displayAllCards();
 	}
 
 	public void addTransaction() {

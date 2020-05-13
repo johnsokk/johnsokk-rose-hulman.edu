@@ -61,7 +61,7 @@ public class HomePage {
 	// TODO Auto-generated method stub
 	// }
 
-	public void displayCard(String currentCardName) {
+	public void displayAllCards() {
 		cardPanel.removeAll();
 		GridLayout cardLayout = new GridLayout(cardMap.size(), 1);
 		cardPanel.setLayout(cardLayout);
@@ -73,8 +73,9 @@ public class HomePage {
 			//System.out.println(cardMap.);
 
 			JButton tileCardButton = new JButton("<html>" + key + "<br/>" + "¥" + cardMap.get(key) + "</html>");
-			tileCardButton.addActionListener(new CardButtonListener(cardMap, currentCardName, this));
+			tileCardButton.addActionListener(new CardButtonListener(cardMap, key, this));
 			cardPanel.add(tileCardButton);
+			
 			//newPanel.add(tileCardButton);
 			//homePage.add(newPanel);
 			// System.out.println(cardMap.);
