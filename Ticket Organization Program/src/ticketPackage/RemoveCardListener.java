@@ -4,6 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
 
+import javax.swing.JFrame;
+
 public class RemoveCardListener implements ActionListener{
 	private CardMenuJFrame cardMenuJFrame;
 	private HashMap cardMap;
@@ -23,10 +25,8 @@ public class RemoveCardListener implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		cardMenuJFrame.setVisible(false);
 		cardMenuJFrame.dispose();
-		cardMap.remove(currentCardName);
-		homepage.displayAllCards();
-		//new AdjustChargeJFrame(cardMap, currentCardName, homepage); 
-		//AddChargeJFrame myCharge = new AddChargeJFrame(); 
-		//myCharge.setTitle("Adding Charge");
+		new DeleteCardConfirmationJFrame(cardMap, homepage, currentCardName);
+		
+		
 	}
 }

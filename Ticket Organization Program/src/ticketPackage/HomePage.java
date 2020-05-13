@@ -18,29 +18,30 @@ public class HomePage {
 	private JPanel cardPanel;
 
 	public HomePage() {
-		
+
 		cardPanel = new JPanel();
 		cardMap = new HashMap<String, Card>();
 		homePage = new JFrame();
-		//AddCardJFrame AddCardJFrameClass = new AddCardJFrame(cardMap, this);
-		GridLayout homePageLayout = new GridLayout(3, 1);
-		homePage.setLayout(homePageLayout);
+		// AddCardJFrame AddCardJFrameClass = new AddCardJFrame(cardMap, this);
+		//GridLayout homePageLayout = new GridLayout(3, 1);
+		//homePage.setLayout(homePageLayout);
 		JButton addCardButton = new JButton("Add Card Icon");
 		addCardButton.addActionListener(new AddCardListener(this.cardMap, this));
 		JLabel welcomeLabel = new JLabel();
-		welcomeLabel.setText("<html>" + "Welcome! Select the 'Add Card Icon' button" + "<br/>" + "below to add a card to your card library." + "</html>");
+		welcomeLabel.setText("<html>" + "Welcome! Select the 'Add Card Icon' button" + "<br/>"
+				+ "below to add a card to your card library." + "</html>");
 		welcomeLabel.setBorder(new EmptyBorder(0, 20, 0, 20));
-		homePage.add(welcomeLabel, BorderLayout.CENTER);
-		homePage.add(welcomeLabel);
-		
+		homePage.add(welcomeLabel, BorderLayout.NORTH);
+
+
 		JPanel addCardPanel = new JPanel();
 		addCardPanel.add(addCardButton);
-		homePage.add(addCardPanel);
-		homePage.add(cardPanel);
+		homePage.add(addCardPanel, BorderLayout.SOUTH);
+		//homePage.add(cardPanel);
 		homePage.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		homePage.setVisible(true);
 		homePage.pack();
-		
+
 	}
 
 	class AddCardListener implements ActionListener {
@@ -51,10 +52,11 @@ public class HomePage {
 			this.homePage = homePage;
 			this.cardMap = cardMap;
 		}
+
 		public void actionPerformed(ActionEvent e) {
 			AddCardJFrame AddCardJFrameClass = new AddCardJFrame(this.cardMap, this.homePage);
-			
-			//System.out.println("Check check");
+
+			// System.out.println("Check check");
 		}
 	}
 	// private void AddCardJFrame() {
@@ -63,26 +65,32 @@ public class HomePage {
 
 	public void displayAllCards() {
 		cardPanel.removeAll();
-		GridLayout cardLayout = new GridLayout(cardMap.size(), 1);
+		GridLayout cardLayout = new GridLayout(cardMap.size() + 1, 1);
 		cardPanel.setLayout(cardLayout);
+		JLabel confirmationText = new JLabel("<html>" + "     " +"<br/>" + "Please click on the cards below" + 
+				"<br/>" + 								"to display card options." + "</html>");
+		cardPanel.setBorder(new EmptyBorder(20, 20, 0, 20));
+		cardPanel.add(confirmationText);
 		for (String key : cardMap.keySet()) {
 
-			//System.out.println(key);
-			//System.out.println(cardMap.get(key));
-			
-			//System.out.println(cardMap.);
+			// System.out.println(key);
+			// System.out.println(cardMap.get(key));
+
+			// System.out.println(cardMap.);
 
 			JButton tileCardButton = new JButton("<html>" + key + "<br/>" + "¥" + cardMap.get(key).gethcbalance() + "</html>");
 			tileCardButton.addActionListener(new CardButtonListener(cardMap, key, this));
 			cardPanel.add(tileCardButton);
-			
-			//newPanel.add(tileCardButton);
-			//homePage.add(newPanel);
+
+			// newPanel.add(tileCardButton);
+			// homePage.add(newPanel);
 			// System.out.println(cardMap.);
 
 		}
-		homePage.setVisible(true);
+		homePage.add(cardPanel, BorderLayout.SOUTH);
 		homePage.pack();
+		homePage.setVisible(true);
+
 	}
 
 }

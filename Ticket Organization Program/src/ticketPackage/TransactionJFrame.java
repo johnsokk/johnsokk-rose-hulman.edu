@@ -1,6 +1,9 @@
 package ticketPackage;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.HashMap;
 
 import javax.swing.JButton;
@@ -25,24 +28,49 @@ public class TransactionJFrame extends JFrame {
 		this.currentCardName = currentCardName;
 		this.homepage = homepage;
 
-		GridLayout transactionlayout = new GridLayout();
+		// GridLayout transactionlayout = new GridLayout(2,1);
 		JPanel transactionPanel = new JPanel();
-		this.setLayout(transactionlayout);
+		// this.setLayout(transactionlayout);
 		JButton searchButton = new JButton("Search Transactions");
 		JButton returnToHome = new JButton("Return to Home");
+
+		class ReturnToHomeListener implements ActionListener {
+			private JFrame transactionHistoryJFrame;
+
+			public ReturnToHomeListener(JFrame transactionHistoryJFrame) {
+				this.transactionHistoryJFrame = transactionHistoryJFrame;
+			}
+
+			public void actionPerformed(ActionEvent e) {
+				// TODO Auto-generated method stub
+
+				this.transactionHistoryJFrame.setVisible(false);
+				this.transactionHistoryJFrame.dispose();
+			}
+
+		}
+		returnToHome.addActionListener(new ReturnToHomeListener(this));
 		JButton printToFile = new JButton("Print to File");
+		JPanel buttonPanel = new JPanel();
+		printToFile.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				new TransactionLogWriter();
+			}
+		});
 
 		String[] columnNames = { "Date", "Item", "Amount", "Balance" };
 		Object[][] transactionData = cardMap.get(currentCardName).getTransactions().transactionLogToTableData();
 		JTable transactionTable = new JTable(transactionData, columnNames);
-		transactionTable.setBounds(30, 40, 200, 300);
+		transactionTable.setBounds(40, 40, 40, 40);
 		this.add(new JScrollPane(transactionTable));
 
-
 		this.setTitle(" Transaction History For: " + currentCardName);
-		this.add(searchButton);
-		this.add(returnToHome);
-		this.add(printToFile);
+		buttonPanel.add(searchButton);
+		buttonPanel.add(returnToHome);
+		buttonPanel.add(printToFile);
+		this.add(buttonPanel, BorderLayout.SOUTH);
 
 		this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		this.pack();
