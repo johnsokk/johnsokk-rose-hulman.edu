@@ -12,6 +12,7 @@ public class TransactionLog {
 		this.item = item;
 		this.amount = amount;
 		this.balance = balance;
+		
 
 	}
 

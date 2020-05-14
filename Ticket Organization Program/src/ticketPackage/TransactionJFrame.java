@@ -56,7 +56,7 @@ public class TransactionJFrame extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
-				new TransactionLogWriter();
+				new TransactionLogWriter(cardMap.get(currentCardName).getTransactions());
 			}
 		});
 
