@@ -23,7 +23,7 @@ public class TransactionHistoryListener implements ActionListener{
 	public void actionPerformed(ActionEvent e) {
 		cardMenuJFrame.setVisible(false);
 		cardMenuJFrame.dispose();
-		new TransactionFrame(cardMenuJFrame, cardMap, currentCardName, homepage);
+		new TransactionJFrame(cardMenuJFrame, cardMap, currentCardName, homepage);
 		//AddChargeJFrame myCharge = new AddChargeJFrame(); 
 		//myCharge.setTitle("Adding Charge");
 	}

@@ -18,6 +18,7 @@ public class CardMenuJFrame extends JFrame {
 		this.currentCardName = currentCardName;
 		this.homepage = homepage;
 		
+		this.setTitle(currentCardName + " Menu");
 		GridLayout cardMenuLayout = new GridLayout(4, 1);
 		
 		JPanel cardMenuPanel = new JPanel();

@@ -6,7 +6,7 @@ import java.util.HashMap;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-// Author Killian
+
 public class TransactionFrame extends JFrame {
 	private Integer hcbalance;
 	private String str;
