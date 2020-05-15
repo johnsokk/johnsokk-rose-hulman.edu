@@ -6,14 +6,16 @@ import java.util.HashMap;
 
 public class CardButtonListener implements ActionListener {
 	//private AddCardJFrame addCardJFrame;
-	private HashMap cardMap;
+	private HashMap<String, Card> cardMap;
 	private String currentCardName;
 	private HomePage homepage;
+	private TransactionLinkedList searchLinkedList;
 	
-	public CardButtonListener(HashMap cardMap, String currentCardName, HomePage homepage) {
+	public CardButtonListener(HashMap<String, Card> cardMap, String currentCardName, HomePage homepage) {
 		this.cardMap = cardMap;
 		this.currentCardName = currentCardName;
 		this.homepage = homepage;
+		this.searchLinkedList = this.cardMap.get(this.currentCardName).getTransactions();
 		//this.addCardJFrame = addCardJFrame;
 	}
 

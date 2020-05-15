@@ -13,7 +13,7 @@ import javax.swing.JTextField;
 
 public class AddCardJFrame extends JFrame {
 
-	private HashMap cardMap;
+	private HashMap<String, Card> cardMap;
 	private JTextField cardName;
 	private JTextField cardBalance;
 	private JTextField cardExpiration;
@@ -21,8 +21,9 @@ public class AddCardJFrame extends JFrame {
 	private String expDate;
 	private String str;
 	private Integer hcbalance;
+	private TransactionLinkedList searchLinkedList;
 
-	public AddCardJFrame(HashMap cardMap, HomePage homepage) {
+	public AddCardJFrame(HashMap<String, Card> cardMap, HomePage homepage, TransactionLinkedList searchLinkedList) {
 		// this.homePageJFrame = homePageJFrame;
 
 		this.homepage = homepage;
@@ -101,9 +102,9 @@ public class AddCardJFrame extends JFrame {
 		System.out.println(expDate);
 		JButton addCardButton = new JButton(str);
 		// addCardButton.addActionListener(new CardButtonListener(this));
-		addCardButton.addActionListener(new CardButtonListener(cardMap, str, homepage));
 		Card newCard = new Card(str, hcbalance, expDate);
 		cardMap.put(str, newCard);
+		addCardButton.addActionListener(new CardButtonListener(cardMap, str, homepage));
 		homepage.displayAllCards();
 	}
 

@@ -6,18 +6,20 @@ import java.util.HashMap;
 
 public class TransactionHistoryListener implements ActionListener{
 	private CardMenuJFrame cardMenuJFrame;
-	private HashMap cardMap;
+	private HashMap<String, Card> cardMap;
 	private String currentCardName;
 	private HomePage homepage;
+	private TransactionLinkedList searchLinkedList;
 
 	// This class needs access to the JFrame in order to close the window
 
-	public TransactionHistoryListener(CardMenuJFrame cardMenuJFrame, HashMap cardMap, String currentCardName,
+	public TransactionHistoryListener(CardMenuJFrame cardMenuJFrame, HashMap<String, Card> cardMap, String currentCardName,
 			HomePage homepage) {
 		this.cardMenuJFrame = cardMenuJFrame;
 		this.cardMap = cardMap;
 		this.currentCardName = currentCardName;
 		this.homepage = homepage;
+		this.searchLinkedList = this.cardMap.get(this.currentCardName).getTransactions();
 	}
 
 	public void actionPerformed(ActionEvent e) {

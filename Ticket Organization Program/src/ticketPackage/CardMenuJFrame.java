@@ -9,14 +9,16 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class CardMenuJFrame extends JFrame {
-	private HashMap cardMap;
+	private HashMap<String, Card> cardMap;
 	private String currentCardName;
 	private HomePage homepage;
+	private TransactionLinkedList searchLinkedList;
 	
-	public CardMenuJFrame(HashMap cardMap, String currentCardName, HomePage homepage) {
+	public CardMenuJFrame(HashMap<String, Card> cardMap, String currentCardName, HomePage homepage) {
 		this.cardMap = cardMap;
 		this.currentCardName = currentCardName;
 		this.homepage = homepage;
+		this.searchLinkedList = this.cardMap.get(this.currentCardName).getTransactions();
 		
 		this.setTitle(currentCardName + " Menu");
 		GridLayout cardMenuLayout = new GridLayout(4, 1);
