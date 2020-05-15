@@ -28,9 +28,9 @@ public class TransactionJFrame extends JFrame {
 		this.cardMap = cardMap;
 		this.currentCardName = currentCardName;
 		this.homepage = homepage;
-		//this.searchLinkedList = searchLinkedList;
-        this.searchLinkedList = this.cardMap.get(this.currentCardName).getTransactions();
-		
+		// this.searchLinkedList = searchLinkedList;
+		this.searchLinkedList = this.cardMap.get(this.currentCardName).getTransactions();
+
 		// GridLayout transactionlayout = new GridLayout(2,1);
 		JPanel transactionPanel = new JPanel();
 		// this.setLayout(transactionlayout);
@@ -63,24 +63,23 @@ public class TransactionJFrame extends JFrame {
 				writer.writetransactions(cardMap.get(currentCardName).getTransactions());
 			}
 		});
-		
+
 		class SearchButtonListener implements ActionListener {
 
 			private TransactionLinkedList searchLinkedList;
 
 			public SearchButtonListener(TransactionLinkedList searchLinkedList) {
 				this.searchLinkedList = searchLinkedList;
-	
+
 			}
-			
+
 			public void actionPerformed(ActionEvent e) {
 				new SearchJFrame(searchLinkedList);
 			}
 
 		}
-		
-		searchButton.addActionListener(new SearchButtonListener(this.searchLinkedList));
 
+		searchButton.addActionListener(new SearchButtonListener(this.searchLinkedList));
 
 		String[] columnNames = { "Date", "Item", "Amount", "Balance" };
 		Object[][] transactionData = cardMap.get(currentCardName).getTransactions().transactionLogToTableData();

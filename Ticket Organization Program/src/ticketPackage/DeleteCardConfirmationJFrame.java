@@ -22,9 +22,9 @@ public class DeleteCardConfirmationJFrame extends JFrame {
 		this.homePage = homePage;
 		this.currentCardName = currentCardName;
 		this.setTitle("Delete " + currentCardName + "?");
-		JLabel confirmationText = new JLabel("<html>" + "Are you sure you would like to permanently" + 
-										"<br/>" + 		"remove this card from your homepage?" +
-										"<br/>" +		"Deleting this card will also delete its data." + "</html>");
+		JLabel confirmationText = new JLabel("<html>" + "Are you sure you would like to permanently" + "<br/>"
+				+ "remove this card from your homepage?" + "<br/>" + "Deleting this card will also delete its data."
+				+ "</html>");
 		JPanel yesnoButtonPanel = new JPanel();
 		JPanel textPanel = new JPanel();
 		textPanel.add(confirmationText);

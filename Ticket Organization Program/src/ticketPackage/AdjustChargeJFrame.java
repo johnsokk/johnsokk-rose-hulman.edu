@@ -37,12 +37,12 @@ public class AdjustChargeJFrame extends JFrame {
 		JPanel adjustChargeTopPanel = new JPanel();
 		JPanel adjustChargeMiddlePanel = new JPanel();
 		JPanel adjustChargeBottomPanel = new JPanel();
-		
+
 		this.setLayout(myLayout);
 
 		if (this.isPositive == true) {
 
-			//JLabel chargeLabel = new JLabel("How much charge did you add?");
+			// JLabel chargeLabel = new JLabel("How much charge did you add?");
 
 			String howMuchCharge = JOptionPane.showInputDialog("How much charge did you add?");
 			int addedCharge = Integer.parseInt(howMuchCharge);
@@ -67,31 +67,30 @@ public class AdjustChargeJFrame extends JFrame {
 			JButton subtractChargeOKButton = new JButton("OK");
 			adjustChargeBottomPanel.add(subtractChargeOKButton, BorderLayout.SOUTH);
 
-
-			
-			
-			class SubtractChargeOKButtonListener implements ActionListener{
+			class SubtractChargeOKButtonListener implements ActionListener {
 				private JFrame adjustChargeJFrame;
-				public SubtractChargeOKButtonListener(JFrame adjustChargeJFrame) {
-				this.adjustChargeJFrame = adjustChargeJFrame;
-				}
-					public void actionPerformed(ActionEvent e) {
-						// TODO Auto-generated method stub
-						String transactionDescriptionString = transactionDescription.getText();
-						String chargeAmountString = chargeAmount.getText();
-						int chargeAmountInteger = Integer.parseInt(chargeAmountString);
-						cardMap.get(currentCardName).subtractBalance(chargeAmountInteger);
-						TransactionLog newLog = new TransactionLog((new Date()).toString(), transactionDescriptionString,
-								-1 * chargeAmountInteger, cardMap.get(currentCardName).gethcbalance());
-						cardMap.get(currentCardName).getTransactions().add(newLog);
-						this.adjustChargeJFrame.setVisible(false);
-						this.adjustChargeJFrame.dispose();
-						homepage.displayAllCards();
 
-					}
+				public SubtractChargeOKButtonListener(JFrame adjustChargeJFrame) {
+					this.adjustChargeJFrame = adjustChargeJFrame;
+				}
+
+				public void actionPerformed(ActionEvent e) {
+					// TODO Auto-generated method stub
+					String transactionDescriptionString = transactionDescription.getText();
+					String chargeAmountString = chargeAmount.getText();
+					int chargeAmountInteger = Integer.parseInt(chargeAmountString);
+					cardMap.get(currentCardName).subtractBalance(chargeAmountInteger);
+					TransactionLog newLog = new TransactionLog((new Date()).toString(), transactionDescriptionString,
+							-1 * chargeAmountInteger, cardMap.get(currentCardName).gethcbalance());
+					cardMap.get(currentCardName).getTransactions().add(newLog);
+					this.adjustChargeJFrame.setVisible(false);
+					this.adjustChargeJFrame.dispose();
+					homepage.displayAllCards();
+
+				}
 			}
-			
-			subtractChargeOKButton.addActionListener(new SubtractChargeOKButtonListener(this));	
+
+			subtractChargeOKButton.addActionListener(new SubtractChargeOKButtonListener(this));
 			adjustChargeBottomPanel.add(subtractChargeOKButton, BorderLayout.SOUTH);
 			this.add(adjustChargeTopPanel);
 			this.add(adjustChargeMiddlePanel);
