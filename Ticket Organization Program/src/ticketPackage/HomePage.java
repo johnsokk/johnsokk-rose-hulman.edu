@@ -16,6 +16,7 @@ public class HomePage {
 	private HashMap<String, Card> cardMap;
 	private JFrame homePage;
 	private JPanel cardPanel;
+	private TransactionLinkedList searchLinkedList;
 
 	public HomePage() {
 
@@ -48,13 +49,13 @@ public class HomePage {
 		private HashMap<String, Card> cardMap;
 		private HomePage homePage;
 
-		public AddCardListener(HashMap cardMap, HomePage homePage) {
+		public AddCardListener(HashMap<String, Card> cardMap, HomePage homePage) {
 			this.homePage = homePage;
 			this.cardMap = cardMap;
 		}
 
 		public void actionPerformed(ActionEvent e) {
-			AddCardJFrame AddCardJFrameClass = new AddCardJFrame(this.cardMap, this.homePage);
+			AddCardJFrame AddCardJFrameClass = new AddCardJFrame(this.cardMap, this.homePage, searchLinkedList);
 
 			// System.out.println("Check check");
 		}

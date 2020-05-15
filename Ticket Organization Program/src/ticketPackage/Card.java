@@ -16,8 +16,14 @@ public class Card {
 		this.expDate = expDate; 
 		this.transactions = new TransactionLinkedList();
 		
-		
 	}
+	
+	public Card() {
+		this.str = "Card Name";
+		this.hcbalance = 0;
+		this.expDate = "05/15/2020";
+	}
+	
 		public String getstr() {
 			return str;
 		}
