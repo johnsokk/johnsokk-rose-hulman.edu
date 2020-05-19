@@ -21,11 +21,8 @@ public class AddCardJFrame extends JFrame {
 	private String expDate;
 	private String str;
 	private Integer hcbalance;
-	private TransactionLinkedList searchLinkedList;
 
 	public AddCardJFrame(HashMap<String, Card> cardMap, HomePage homepage, TransactionLinkedList searchLinkedList) {
-		// this.homePageJFrame = homePageJFrame;
-
 		this.homepage = homepage;
 		this.cardMap = cardMap;
 
@@ -101,7 +98,6 @@ public class AddCardJFrame extends JFrame {
 		String expDate = cardExpiration.getText();
 		System.out.println(expDate);
 		JButton addCardButton = new JButton(str);
-		// addCardButton.addActionListener(new CardButtonListener(this));
 		Card newCard = new Card(str, hcbalance, expDate);
 		cardMap.put(str, newCard);
 		addCardButton.addActionListener(new CardButtonListener(cardMap, str, homepage));

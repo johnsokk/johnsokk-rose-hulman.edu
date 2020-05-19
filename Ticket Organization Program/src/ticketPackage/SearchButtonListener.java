@@ -10,7 +10,6 @@ public class SearchButtonListener implements ActionListener {
 	private TransactionLinkedList searchLinkedList;
 	private JTextField searchBox;
 	private SearchJFrame searchJFrame;
-	// private AddCardJFrame addCardJFrame;
 
 	public SearchButtonListener(TransactionLinkedList searchLinkedList, JTextField searchBox, SearchJFrame searchJFrame) {
 		this.searchLinkedList = searchLinkedList;

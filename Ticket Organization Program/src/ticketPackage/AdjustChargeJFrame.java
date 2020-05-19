@@ -28,11 +28,6 @@ public class AdjustChargeJFrame extends JFrame {
 		this.currentCardName = currentCardName;
 		this.homepage = homepage;
 		this.isPositive = isPositive;
-		// JFrame addChargeJFrame = new JFrame();
-		// this.setTitle("Adding Charge");
-		// String howMuchCharge = JOptionPane.showInputDialog("How much charge did you
-		// add?");
-		// int addedCharge = Integer.parseInt(howMuchCharge);
 		GridLayout myLayout = new GridLayout(3, 1);
 		JPanel adjustChargeTopPanel = new JPanel();
 		JPanel adjustChargeMiddlePanel = new JPanel();
@@ -41,9 +36,6 @@ public class AdjustChargeJFrame extends JFrame {
 		this.setLayout(myLayout);
 
 		if (this.isPositive == true) {
-
-			// JLabel chargeLabel = new JLabel("How much charge did you add?");
-
 			String howMuchCharge = JOptionPane.showInputDialog("How much charge did you add?");
 			int addedCharge = Integer.parseInt(howMuchCharge);
 			cardMap.get(currentCardName).addBalance(addedCharge);
@@ -75,7 +67,6 @@ public class AdjustChargeJFrame extends JFrame {
 				}
 
 				public void actionPerformed(ActionEvent e) {
-					// TODO Auto-generated method stub
 					String transactionDescriptionString = transactionDescription.getText();
 					String chargeAmountString = chargeAmount.getText();
 					int chargeAmountInteger = Integer.parseInt(chargeAmountString);

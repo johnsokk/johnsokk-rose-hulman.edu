@@ -13,7 +13,6 @@ public class TransactionLog {
 		this.amount = amount;
 		this.balance = balance;
 		
-
 	}
 
 	public String getDate() {

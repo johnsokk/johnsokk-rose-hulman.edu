@@ -16,13 +16,9 @@ public class CardButtonListener implements ActionListener {
 		this.currentCardName = currentCardName;
 		this.homepage = homepage;
 		this.searchLinkedList = this.cardMap.get(this.currentCardName).getTransactions();
-		//this.addCardJFrame = addCardJFrame;
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		//addCardJFrame.addTransaction();
-		//addCardJFrame.setVisible(true);
-		//addCardJFrame.dispose();
 		new CardMenuJFrame(cardMap, currentCardName, homepage);
 		System.out.println("Hi " + currentCardName);
 	

@@ -28,12 +28,8 @@ public class TransactionJFrame extends JFrame {
 		this.cardMap = cardMap;
 		this.currentCardName = currentCardName;
 		this.homepage = homepage;
-		// this.searchLinkedList = searchLinkedList;
 		this.searchLinkedList = this.cardMap.get(this.currentCardName).getTransactions();
-
-		// GridLayout transactionlayout = new GridLayout(2,1);
 		JPanel transactionPanel = new JPanel();
-		// this.setLayout(transactionlayout);
 		JButton searchButton = new JButton("Search Transactions");
 		JButton returnToHome = new JButton("Return to Home");
 
@@ -45,8 +41,6 @@ public class TransactionJFrame extends JFrame {
 			}
 
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
-
 				this.transactionHistoryJFrame.setVisible(false);
 				this.transactionHistoryJFrame.dispose();
 			}

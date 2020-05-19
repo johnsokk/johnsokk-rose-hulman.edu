@@ -11,9 +11,6 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 public class TransactionLogWriter extends JFrame {
 
-	    
-	    //FileFilter filter1 = new ExtensionFileFilter("Text File", new String[] { "TXT"});
-	    //fileChooser.setFileFilter(filter1);
 	public void writetransactions(TransactionLinkedList transactions) {
 		File chosenfile = this.getfiletowrite();
 		if (chosenfile == null) {
@@ -34,15 +31,11 @@ public class TransactionLogWriter extends JFrame {
 				}
 				newFile.close();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	}
 	public File getfiletowrite() {
 		JFileChooser fileChooser = new JFileChooser("d:");		
-	    //FileNameExtensionFilter filter = new FileNameExtensionFilter(
-	    //   "txt");
-	    //fileChooser.setFileFilter(filter);
 	    int returnVal = fileChooser.showOpenDialog(this);
 	    if(returnVal == JFileChooser.APPROVE_OPTION) {
 	       System.out.println("You chose to open this file: " +

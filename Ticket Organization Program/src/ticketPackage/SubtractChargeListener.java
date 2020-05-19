@@ -25,7 +25,6 @@ public class SubtractChargeListener implements ActionListener{
 		cardMenuJFrame.setVisible(false);
 		cardMenuJFrame.dispose();
 		new AdjustChargeJFrame(cardMap, currentCardName, homepage,isPositive); 
-		//AddChargeJFrame myCharge = new AddChargeJFrame(); 
-		//myCharge.setTitle("Adding Charge");
+
 	}
 }
