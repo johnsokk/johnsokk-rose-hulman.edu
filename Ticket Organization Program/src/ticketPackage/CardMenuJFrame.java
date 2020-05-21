@@ -38,7 +38,7 @@ public class CardMenuJFrame extends JFrame {
 		// Adds the panel to the frame
 		this.add(addChargePanel);
 		// Creates a button to subtract charge to the card and adds a listener
-		JButton subtractChargeButton = new JButton("Subtract Charge");
+		JButton subtractChargeButton = new JButton("Record Expense");
 		subtractChargeButton.addActionListener(new SubtractChargeListener(this, cardMap, currentCardName, homepage));
 		// Adds the button to the panel
 		subtractChargePanel.add(subtractChargeButton);

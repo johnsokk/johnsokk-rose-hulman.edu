@@ -6,12 +6,12 @@ import java.util.HashMap;
 
 public class SubtractChargeListener implements ActionListener{
 	private CardMenuJFrame cardMenuJFrame;
-	private HashMap cardMap;
+	private HashMap<String, Card> cardMap;
 	private String currentCardName;
 	private HomePage homepage;
 	
 	// This class needs access to the JFrame in order to close the window
-	public SubtractChargeListener(CardMenuJFrame cardMenuJFrame, HashMap cardMap, String currentCardName,
+	public SubtractChargeListener(CardMenuJFrame cardMenuJFrame, HashMap<String, Card> cardMap, String currentCardName,
 			HomePage homepage) {
 		this.cardMenuJFrame = cardMenuJFrame;
 		this.cardMap = cardMap;
