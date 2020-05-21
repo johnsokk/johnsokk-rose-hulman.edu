@@ -1,11 +1,10 @@
 package ticketPackage;
-
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
+// Author Killian
 
 public class CardButtonListener implements ActionListener {
-	//private AddCardJFrame addCardJFrame;
 	private HashMap<String, Card> cardMap;
 	private String currentCardName;
 	private HomePage homepage;
@@ -19,8 +18,7 @@ public class CardButtonListener implements ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		new CardMenuJFrame(cardMap, currentCardName, homepage);
-		System.out.println("Hi " + currentCardName);
-	
+		// This calls to create/open a new Card Menu window when a Card button is pressed 
+		new CardMenuJFrame(cardMap, currentCardName, homepage);	
 	}
 }

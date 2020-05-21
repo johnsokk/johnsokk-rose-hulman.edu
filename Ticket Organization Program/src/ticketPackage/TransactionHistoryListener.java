@@ -1,8 +1,8 @@
-
 package ticketPackage;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.HashMap;
+// Author Killian
 
 public class TransactionHistoryListener implements ActionListener{
 	private CardMenuJFrame cardMenuJFrame;
@@ -12,7 +12,6 @@ public class TransactionHistoryListener implements ActionListener{
 	private TransactionLinkedList searchLinkedList;
 
 	// This class needs access to the JFrame in order to close the window
-
 	public TransactionHistoryListener(CardMenuJFrame cardMenuJFrame, HashMap<String, Card> cardMap, String currentCardName,
 			HomePage homepage) {
 		this.cardMenuJFrame = cardMenuJFrame;
@@ -23,9 +22,10 @@ public class TransactionHistoryListener implements ActionListener{
 	}
 
 	public void actionPerformed(ActionEvent e) {
+		// Closes the prior frame to declutter
 		cardMenuJFrame.setVisible(false);
 		cardMenuJFrame.dispose();
+		// Creates a call for a new TransactionJFrame when button is pressed
 		new TransactionJFrame(cardMenuJFrame, cardMap, currentCardName, homepage);
-
 	}
 }
